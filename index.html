@@ -63,12 +63,14 @@
         #cactus1 { top: 10px; left: 10px; }
         #cactus2 { bottom: 10px; right: 10px; }
         #headerImage {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 15px;
-        }
+			width: 100%;
+			max-width: 800px;
+			height: 200px; /* גובה החצי התחתון */
+			object-fit: cover; /* חותך את התמונה */
+			object-position: bottom; /* מציג את החלק התחתון */
+			margin-bottom: 20px;
+			border-radius: 15px;
+		}
         footer {
             margin-top: 40px;
             text-align: center;
@@ -165,7 +167,6 @@
         Rights reserved to Matan Retzer 2024
     </footer>
 
-    <script>
     <script>
         const songs = {
             1: {
@@ -527,21 +528,21 @@
         };
 
         document.getElementById('songSelect').addEventListener('change', function() {
-            const selectedSong = songs[this.value];
-            const titleElement = document.getElementById('songTitle');
-            const descriptionElement = document.getElementById('songDescription');
-            const lyricsElement = document.getElementById('songLyrics');
+        const selectedSong = songs[this.value];
+        const titleElement = document.getElementById('songTitle');
+        const descriptionElement = document.getElementById('songDescription');
+        const lyricsElement = document.getElementById('songLyrics');
 
-            if (selectedSong) {
-                titleElement.textContent = selectedSong.title;
-                descriptionElement.textContent = selectedSong.description;
-                lyricsElement.textContent = selectedSong.lyrics;
-            } else {
-                titleElement.textContent = '';
-                descriptionElement.textContent = '';
-                lyricsElement.textContent = '';
-            }
-        });
-    </script>
+        if (selectedSong) {
+            titleElement.textContent = selectedSong.title;
+            descriptionElement.textContent = selectedSong.description;
+            lyricsElement.textContent = selectedSong.lyrics;
+        } else {
+            titleElement.textContent = '';
+            descriptionElement.textContent = '';
+            lyricsElement.textContent = '';
+        }
+    });
+	</script>
 </body>
 </html>
