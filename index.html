@@ -69,7 +69,13 @@
             margin-bottom: 20px;
             border-radius: 15px;
         }
-    </style>
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #8b4513;
+        }
+	</style>	 
 </head>
 <body>
     <img id="headerImage" src="elcaminorosa.jpg" alt="El Camino Rosa">
@@ -155,7 +161,11 @@
         <div id="songDescription"></div>
         <div id="songLyrics"></div>
     </div>
+    <footer>
+        Rights reserved to Matan Retzer 2024
+    </footer>
 
+    <script>
     <script>
         const songs = {
             1: {
@@ -518,14 +528,18 @@
 
         document.getElementById('songSelect').addEventListener('change', function() {
             const selectedSong = songs[this.value];
+            const titleElement = document.getElementById('songTitle');
+            const descriptionElement = document.getElementById('songDescription');
+            const lyricsElement = document.getElementById('songLyrics');
+
             if (selectedSong) {
-                document.getElementById('songTitle').textContent = selectedSong.title;
-                document.getElementById('songDescription').textContent = selectedSong.description;
-                document.getElementById('songLyrics').textContent = selectedSong.lyrics;
+                titleElement.textContent = selectedSong.title;
+                descriptionElement.textContent = selectedSong.description;
+                lyricsElement.textContent = selectedSong.lyrics;
             } else {
-                document.getElementById('songTitle').textContent = '';
-                document.getElementById('songDescription').textContent = '';
-                document.getElementById('songLyrics').textContent = '';
+                titleElement.textContent = '';
+                descriptionElement.textContent = '';
+                lyricsElement.textContent = '';
             }
         });
     </script>
