@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Camino Rosa - שירון עברי</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Rubik', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0e68c; /* צבע רקע חול מדברי */
+            color: #2e8b57; /* צבע טקסט ירוק כהה */
+        }
+        h1 {
+            text-align: center;
+            color: #8b4513; /* חום כהה */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-family: 'Rubik', Arial, sans-serif;
+            background-color: #fafad2; /* צבע רקע בהיר */
+            border: 2px solid #2e8b57;
+            border-radius: 10px;
+        }
+        #songDetails {
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid #2e8b57;
+        }
+        #songTitle {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #8b4513;
+            font-weight: 700;
+        }
+        #songDescription {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #556b2f;
+        }
+        #songLyrics {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            background-color: rgba(250,250,210,0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .cactus {
+            font-size: 30px;
+            position: absolute;
+            opacity: 0.5;
+        }
+        #cactus1 { top: 10px; left: 10px; }
+        #cactus2 { bottom: 10px; right: 10px; }
+        #headerImage {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <img id="headerImage" src="elcaminorosa.jpg" alt="El Camino Rosa">
+    <div class="cactus" id="cactus1">🌵</div>
+    <div class="cactus" id="cactus2">🌵</div>
+    <h1>🌞 El Camino Rosa - שירון עברי 🌴</h1>
+    <select id="songSelect">
+        <option value="">בחר שיר</option>
+        <option value="1">1. Los Quatro Elementos - ארבעת האלמנטים</option>
+        <option value="2">2. Alas Poderosas - כנפיים חזקות</option>
+        <option value="3">3. Aguilá Aguilé - נשר נשר</option>
+		<option value="4">4. Agua Vital - מים חיוניים</option>
+<option value="5">5. Heart’s Mystery - מסתורין הלב</option>
+<option value="6">6. Hubo un Tiempo Muy Lejano - היה זמן רחוק מאוד</option>
+<option value="7">7. Pajaro Viejo - ציפור זקנה</option>
+<option value="8">8. Hubo un Tiempo - היה זמן</option>
+<option value="9">9. Flor Das Aguas - פרח המים</option>
+<option value="10">10. Viejo Tambor - תוף זקן</option>
+<option value="11">11. Oso Blanco - דוב לבן</option>
+<option value="12">12. Unidas Por Plumas - מאוחדות על ידי נוצות</option>
+<option value="13">13. Ninawa Pai Da Mata - נינאווה פאי דה מאטה</option>
+<option value="14">14. Arare el Aire - אחרוש את האוויר</option>
+<option value="15">15. Mujer de la Tierra - אישה מהאדמה</option>
+<option value="16">16. Oh Mi Madre Tierra - הו אמא אדמה שלי</option>
+<option value="17">17. Águila y Cóndor - נשר וקונדור</option>
+<option value="18">18. Agua Del Amor - מים של אהבה</option>
+<option value="19">19. Tren del Cielo - רכבת השמיים</option>
+<option value="20">20. Cuatro Aguilas - ארבעה נשרים</option>
+<option value="21">21. Cura da Floresta - רפואת היער</option>
+<option value="22">22. Abuelito y Abuelita - סבא וסבתא</option>
+<option value="23">23. איך אוכל להמשיך לישון</option>
+<option value="24">24. El Camino Rosa - הדרך הוורודה</option>
+<option value="25">25. La Casa de mis Abuelos - הבית של סבא וסבתא שלי</option>
+<option value="27">27. Mensageiro Beija-Flor - שליח יונק הדבש</option>
+<option value="28">28. Duas Ventarolas - שתי שבשבות</option>
+<option value="29">29. A Energia da Floresta - האנרגיה של היער</option>
+<option value="30">30. Pinta Viva - צבע חי</option>
+<option value="31">31. Tapuya - טאפויה</option>
+<option value="32">32. Fenix - עוף החול</option>
+<option value="33">33. Sagrado Femenino - הנשי הקדוש</option>
+<option value="34">34. Madre Tierra Temazcal - אמא אדמה טמאזקל</option>
+<option value="35">35. Canto Curador - שיר מרפא</option>
+<option value="36">36. שיר בעברית (ללא שם)</option>
+<option value="37">37. אם בתוך האש</option>
+<option value="38">38. Huni Kuin Kaxinawa - הוני קווין קשינאווה</option>
+<option value="39">39. Forca da Floresta - כוח היער</option>
+<option value="40">40. Na Rene Wakame e - נה רנה וואקמה א</option>
+<option value="41">41. Cura para Nos Curar - ריפוי לנו</option>
+<option value="42">42. Esfera Azul - כדור כחול</option>
+<option value="43">43. Xanu Yara - שנו יארה</option>
+<option value="44">44. Canta Pajarito - שיר לציפור</option>
+<option value="45">45. Agua No Mas Palabras - מים, לא עוד מילים</option>
+<option value="46">46. Huehueteotl - הואואטאוטל</option>
+<option value="47">47. Aguas Claras - מים צלולים</option>
+<option value="48">48. Pachamama y Pachakamaq - פצ'מאמא ופצ'קאמאק</option>
+<option value="49">49. Om Nama Shivaya - אום נמה שיוואיה</option>
+<option value="50">50. Txana Ikakuru - טקסנה איקאקורו</option>
+<option value="51">51. Ojos - עיניים</option>
+<option value="52">52. Caminante Sabio - המטייל החכם</option>
+<option value="53">53. Abuelos Milenarios - סבים קדמונים</option>
+<option value="54">54. עבדי זמן</option>
+<option value="55">55. שלח לי מלאך</option>
+<option value="56">56. נשמת כל חי</option>
+<option value="57">57. אלון בסלע</option>
+<option value="58">58. שירו של שפשף</option>
+<option value="59">59. פרפרי הקצב</option>
+<option value="60">60. עוד תראי את הדרך</option>
+<option value="61">61. כל כולי אור</option>
+<option value="62">62. אם</option>
+<option value="63">63. Aguita Camino Rojo - מים בדרך האדומה</option>
+<option value="64">64. La Tierra del Misterio - אדמת המסתורין</option>
+<option value="65">65. Abuelito Fuego - סבא אש</option>
+<option value="66">66. Família Ywanawa - משפחת יוואנאווה</option>
+<option value="67">67. Espiritu del Agua - רוח המים</option>
+<option value="68">68. Bella Flor - פרח יפה</option>
+<option value="69">69. Agüita Camino Rojo - מים בדרך האדומה</option>
+<option value="70">70. Sagrada Familia - משפחה קדושה</option>
+<option value="71">71. אחותי משבט אינדיאני</option>
+<option value="72">72. El Alegre Pescador - הדייג השמח</option>
+    </select>
+    <div id="songDetails">
+        <div id="songTitle"></div>
+        <div id="songDescription"></div>
+        <div id="songLyrics"></div>
+    </div>
+
+    <script>
+        const songs = {
+            1: {
+                title: "Los Quatro Elementos - ארבעת האלמנטים",
+                description: "השיר מדבר על חיבור לארבעת האלמנטים של הטבע: אדמה, מים, אש ואוויר. הוא מתאר את הכוח והחשיבות של כל אחד מהם ואת האיזון שהם מביאים לחיים.",
+                lyrics: "Tierra mi cuerpo, agua mi sangre\nהאדמה היא גופי, המים הם דמי\n\nAire mi aliento y fuego mi espíritu\nהאוויר הוא נשימתי, והאש היא רוחי\n\nTierra mi cuerpo, agua mi sangre\nהאדמה היא גופי, המים הם דמי\n\nAire mi aliento y fuego mi espíritu\nהאוויר הוא נשימתי, והאש היא רוחי"
+            },
+            2: {
+                title: "Alas Poderosas - כנפיים חזקות",
+                description: "השיר מדבר על כוח אישי והתחברות לאדמה ולרוחות השמים, ומתאר תחושת עוצמה ושמחה בהתחברות לטבע ולעולם הרוחני.",
+                lyrics: "Te doy gracias madre tierra, la abundancia de tu amor\nאני מודה לך, אמא אדמה, על שפע האהבה שלך\n\nTe doy gracias madre tierra, la alegría de mi amor\nאני מודה לך, אמא אדמה, על השמחה שבאהבתי\n\nSoy la hija de la tierra, Magia de Luna y de sol\nאני בת האדמה, הקסם של הירח והשמש\n\nY llamo a los cuatro vientos, me dispongo a volar\nואני קוראת לארבע רוחות השמים, אני מוכנה לעוף"
+            },
+            3: {
+                title: "Aguilá Aguilé - נשר נשר",
+                description: "שיר אהבה המתאר את השירה של סב וסבתא בדמות ציפור, אשר מרחפת ומביאה עימה זיכרונות אהבה.",
+                lyrics: "Desde lejos desde lejos oigo\nממרחקים, ממרחקים אני שומע\n\nEl canto enamorado de un pájaro\nאת שירת אהבה של ציפור\n\nEse pájaro es mi abuela\nהציפור הזאת היא סבתי\n\nEs mi abuela que canta que canta enamorada\nזו סבתי ששרה, ששרה באהבה"
+            },
+			4: {
+				title: "Agua Vital",
+				description: "השיר מתאר את הכוח המנקה של המים, את אהבת האש השורפת את הפחדים, ואת הרצון לחזור לאדמה האם.",
+				lyrics: "Agua vital, purificame\nמים חיוניים, טהרי אותי\n\nFuego del amor, quema mi temor\nאש האהבה, שורפי את פחדיי\n\nViento del alma, llévame a la altar\nרוח הנפש, קחי אותי אל המזבח\n\nMadre tierra, vuelvo a tu hogar\nאמא אדמה, אני חוזר לביתך\n\nEn este lugar, en este lugar\nבמקום הזה, במקום הזה"
+			},
+			5: {
+				title: "Heart’s Mystery",
+				description: "השיר מדבר על הרגע שבו מפסיקים לפחד והאמת מתגלה, מוביל לריפוי טבעי ותחושת אהבה שעוטפת את הכל.",
+				lyrics: "When you let go of fear\nכשאתה משחרר את הפחד\n\nThe truth will appear, so simple and clear\nהאמת תופיע, כל כך פשוטה וברורה\n\nThere’s a feeling inside\nיש תחושה בתוכך\n\nSo deep and so wide, so open and free\nכל כך עמוקה וכל כך רחבה, כל כך פתוחה וחופשית\n\nWhen love is revealed\nכשאהבה מתגלה\n\nAll beings are healed so naturally\nכל היצורים נרפאים באופן טבעי\n\nWhen you let go of fear…\nכשאתה משחרר את הפחד..."
+			},
+			6: {
+				title: "Hubo un Tiempo Muy Lejano",
+				description: "השיר מתאר את הקשר הקדום בין השבט לאדמה, ואת התקופות הקדושות שהיו מלאות בשירה, ריקודים וקשרים רוחניים.",
+				lyrics: "Tiempo muy lejano, al galopar de caballos\nזמן רחוק מאוד, בדהרת סוסים\n\nCorriendo libres al viento por montes cerros y llanos\nרצים חופשיים ברוח דרך הרים, גבעות ומישורים\n\nTiempo en que la tribu era parte de la tierra\nזמן שבו השבט היה חלק מהאדמה\n\nHablaba con los espíritus, conversaba con las estrellas\nשוחח עם הרוחות, דיבר עם הכוכבים\n\nTiempo de tambores, de sonajas y de plumas\nזמן של תופים, רעשנים ונוצות"
+			},
+			7: {
+				title: "Pajaro Viejo",
+				description: "שיר על הציפור הזקנה ששר ומזכיר לכולנו שאנחנו ילדיה של אמא אדמה.",
+				lyrics: "Pajaro Viejo que cantas, que cantas\nציפור זקנה ששרה, ששרה\n\nEsta tierra te ha visto nacer\nהאדמה הזאת ראתה את לידתך\n\nCanta, canta, cantame\nשירי, שירי, שירי לי\n\nCantame, recuerdame\nשירי לי, זכרי אותי\n\nQue somos todos hijos del sol\nשכולנו ילדים של השמש"
+			},
+			8: {
+				title: "Hubo un Tiempo",
+				description: "השיר מדבר על החזרה לזמנים הקדומים בהם לחיים הייתה מנגינה והחיים היו שיר שמחובר לטבע.",
+				lyrics: "Hubo un tiempo que está para volver\nהיה זמן שחוזר\n\nQue está para volver que está para volver\nשחוזר, שחוזר\n\nDonde la vida tenia melodia\nשם לחיים הייתה מנגינה\n\nTenia melodia tenia melodia\nהייתה מנגינה, הייתה מנגינה\n\nDejame volar como un pajaro\nתן לי לעוף כמו ציפור"
+			},
+			9: {
+				title: "Flor Das Aguas",
+				description: "השיר מדבר על הניקוי האישי במים, ומגלה את הסודות העמוקים של האהבה והאנושות.",
+				lyrics: "Flor das águas da onde vem para onde vais\nפרח המים, מאיפה אתה בא ולאן אתה הולך\n\nVou fazer a minha limpeza no coração está meu Pai\nאני אעשה את הניקוי שלי, בלב שלי נמצא אבי\n\nA morada do meu Pai é no corazón do mundo\nהמגורים של אבי הם בלב העולם\n\nAonde existe todo Amor e tem um segredo profundo\nשם קיימת כל האהבה ויש סוד עמוק"
+			},
+			10: {
+				title: "Viejo Tambor",
+				description: "השיר מוקדש לתוף הזקן, שמוביל בשמחה ובאהבה לאורך הדרך ומזכיר את הדרכים הקדומות של האבות.",
+				lyrics: "Desde los tiempos en que mi abuelo soñó que un día\nמאז התקופות שבהן סבי חלם שיום אחד\n\nYo viviría para cantarles esta canción\nאני אחיה כדי לשיר להם את השיר הזה\n\nDesde los tiempos en que mi abuelo soñó que un día\nמאז התקופות שבהן סבי חלם שיום אחד\n\nYo Moriría para entregarles\nואני אמות כדי למסור להם"
+			},
+			11: {
+				title: "Oso Blanco",
+				description: "השיר מתאר חיזיון מסתורי שבו מופיע דוב לבן עם כנפי קונדור ומבט של יגואר.",
+				lyrics: "En este camino rumba a la selva\nבדרך הזו לכיוון הג'ונגל\n\nMe he encontrado un pajarillo soñajero\nפגשתי ציפור קטנה חולמנית\n\nQue inspirado en el vuelo del aguila\nשקיבלה השראה מהטיסה של הנשר\n\nEncontro en su corazon\nמצאה בלבה\n\nEste canto que brota del alma aqui y ahora\nאת השיר הזה שצומח מהנשמה כאן ועכשיו\n\nPajarillo soñajero encontraste en la vision\nציפור קטנה חולמנית, מצאת בחזון\n\nA un oso blanco con alas de condor y mirada de jaguar\nדוב לבן עם כנפי קונדור ומבט של יגואר"
+			},
+			12: {
+				title: "Unidas Por Plumas",
+				description: "השיר מדבר על האיחוד בין הנשים בעזרת נוצות, והשימוש בכוחן לעוף גבוה כמו ציפור האש וציפור הרעם.",
+				lyrics: "Estamos unidas por plumas\nאנחנו מאוחדות על ידי נוצות\n\nCon plumas construimos nuestras alas\nעם נוצות אנו בונות את כנפינו\n\nVolando alto como el pájaro del fuego\nעפות גבוה כמו ציפור האש\n\nVolando alto como el pájaro del trueno\nעפות גבוה כמו ציפור הרעם\n\nEl águila y el condor se unen\nהנשר והקונדור מתאחדים\n\nMis oraciones llegan hasta el cielo\nתפילתי מגיעה עד השמיים"
+			},
+			13: {
+				title: "Ninawa Pai Da Mata",
+				description: "השיר מוקדש לאנשי ההוניקוין, התושבים הילידים של ברזיל ופרו, כהוקרה לאורח חייהם ותרבותם.",
+				lyrics: "Hawa putu maima, ruma putu maima\nחאווה פוטו מאימה, רומה פוטו מאימה\n\nPutu mai matanô… ne ene ane\nפוטו מאי מתאנוא... נה אנה אנה"
+			},
+			14: {
+				title: "Arare el Aire",
+				description: "שיר זה מדבר על חירוש הנשמה, זריעת שירים ותקווה, ותחושת חיבור עמוק לאדמה.",
+				lyrics: "Arare, arare, arare el aire\nאחרוש, אחרוש, אחרוש את האוויר\n\nY sembrare el viento, plantare un sentimiento\nואזרע את הרוח, אשתול תחושה\n\nArare, arare, arare el alma\nאחרוש, אחרוש, אחרוש את הנשמה\n\nY sembrare un canto, plantare una esperanza\nואזרע שיר, אשתול תקווה"
+			},
+			15: {
+				title: "Mujer de la Tierra",
+				description: "השיר מהלל את הנשים ואת החיבור שלהן לאדמה, תוך כדי תיאור של ריקוד ושירה עם אור הירח והכוכבים.",
+				lyrics: "Yo soy mujer de la tierra, danzando con luz de luna\nאני אישה מהאדמה, רוקדת עם אור הירח\n\nMe coronan las estrellas y las esencias viven en mi\nהכוכבים מעטרים אותי והמהויות חיות בי\n\nYo soy la fiesta de la vida, danzando en el universo\nאני חגיגת החיים, רוקדת ביקום\n\nMe alegria es medicina y las diosas viven en mi\nשמחתי היא רפואה והאלות חיות בי"
+			},
+			16: {
+				title: "Oh Mi Madre Tierra",
+				description: "שיר הודיה לאמא אדמה על כל השפע והאהבה שהיא מעניקה, ומזכיר את האיזון וההרמוניה בחיים.",
+				lyrics: "Oh mi madre tierra yo te agradezco\nהו אמא אדמה שלי, אני מודה לך\n\nPor este presente en mi corazon\nעל המתנה הזו בלבי\n\nRecibo con amor todo le que tu me das\nאני מקבל באהבה את כל מה שאת נותנת לי\n\nY con alegria ay ay Yemanja\nובשמחה, איי איי ימאניה"
+			},
+			17: {
+				title: "Águila y Cóndor",
+				description: "השיר מברך את היום החדש שמתחיל, ואת הנוכחות המופלאה של הנשר והקונדור, המדיסינות המקודשות שמביאות ריפוי ואור.",
+				lyrics: "Águila y cóndor volando juntos al sol\nנשר וקונדור עפים יחד אל השמש\n\nY el viento de sus alas nos despiertan\nורוח כנפיהם מעירה אותנו\n\nA nuestros corazones\nללבבות שלנו\n\nPreparando un nuevo día, de amor y alegría\nמכינים יום חדש, של אהבה ושמחה"
+			},
+			18: {
+				title: "Agua Del Amor",
+				description: "שיר תפילה ותודה לחיים, למשפחה ולדרך, המדבר על האהבה כמים אינסופיים הזורמים דרך כולם.",
+				lyrics: "El amor es el agua infinita\nהאהבה היא המים האינסופיים\n\nDivinidad fluyendo pura vida\nאלוהות זורמת חיים טהורים\n\nEl río libre es mi sangre\nהנהר החופשי הוא הדם שלי\n\nMi sangre roja es el camino\nדמי האדום הוא הדרך"
+			},
+			19: {
+				title: "Tren del Cielo",
+				description: "שיר המוקדש לקלאודיה לזכרה, מתאר מסע דרך העננים אל השמש, עם כנפי הלב.",
+				lyrics: "Viajo por las nubes, voy llevando mi canción\nאני נוסע דרך העננים, נושא את שירי\n\nVuelo por los cielos, con las alas de mi corazón\nאני עף בשמיים, עם כנפי לבי\n\nDéjame que llegue, que me está llamando el sol\nתן לי להגיע, השמש קוראת לי\n\nVuelan los que pueden, volar con la imaginación\nעפים אלו שיכולים לעוף עם הדמיון"
+			},
+			20: {
+				title: "Cuatro Aguilas",
+				description: "שיר מהמסורת האצטקית המקסיקאית, המדבר על הכוח של ארבעה נשרים וכוחם של האלמנטים.",
+				lyrics: "Cuatro aguilas, cuatro aguilas\nארבעה נשרים, ארבעה נשרים\n\nCuatro aguilas volaron en aztlan…\nארבעה נשרים עפו באצטלן...\n\nAgua fuego, agua fuego\nמים ואש, מים ואש\n\nAgua fuego en Tenochtitlan…\nמים ואש בטנוצ'טיטלאן..."
+			},
+			21: {
+				title: "Cura da Floresta",
+				description: "השיר עוסק בכוח הריפוי של הטבע, המדיסינות הסקרדיות והחיבור למאמא אדמה ולכוחות השונים ביער.",
+				lyrics: "Ne ananane ana-nane ananane ana-nane\nנה אנאננה אנא-ננה אנאננה אנא-ננה\n\nAnanane ana-nane ananane ana-nane\nאנאננה אנא-ננה אנאננה אנא-ננה\n\nRecebe com amor\nקבל באהבה\n\nAs medicinas sagradas\nאת המדיסינות הקדושות"
+			},
+			22: {
+				title: "Abuelito y Abuelita",
+				description: "שיר תודה לאבותינו הקדמונים על המדיסינה והזכות להתפלל, ומזכיר לנו לשחרר את כל מה שאינו משרת אותנו עוד.",
+				lyrics: "Abuelito y abuelita, gracias venimos a dar\nסבא וסבתא, תודה אנחנו באים לתת\n\nPor toda la medicina que nos vienen a ofrendar\nעל כל המדיסינה שאתם באים להציע לנו\n\nAquí en esté circulito corazones a rezar\nכאן במעגל הקטן הזה לבבות מתפללים\n\nTodo lo que no nos sirva aquí vamos a dejar\nכל מה שאינו משרת אותנו, כאן נשחרר"
+			},
+			23: {
+				title: "איך אוכל להמשיך לישון",
+				description: "השיר מדבר על הקושי להישאר בשינה כאשר העולם מסביב מתעורר, השמש זורחת, והמחשבות נעות בעקבות השינויים והטבע המתגלה.",
+				lyrics: "איך אוכל להמשיך לישון\nכשאחי מתעוררים?\n\nאיך אוכל להמשיך לישון\nכששמש מתחילה לזרוח?\n\nאיך אוכל להמשיך לישון\nכשעלי לזמר שיר חדש?\n\nאיך אוכל להמשיך לישון\nכשעצי אורן מתחילים לנבוט?"
+			},
+			24: {
+				title: "El Camino Rosa",
+				description: "השיר מדבר על סוד הנשמה ועל הדרך שאנו הולכים בה, המלאה בצבעים של שמחה וכאב, אהבה ותקווה.",
+				lyrics: "El secreto de la alma lo sabe solo dios\nהסוד של הנשמה ידוע רק לאלוהים\n\nEn la tierra a pintar un camino para vos\nעל האדמה לצייר לך דרך\n\nAsi que baila Tali, con las plumas y la magia divinal\nאז ריקדי, טלי, עם הנוצות והקסם האלוהי\n\nDel amor y alegria, del humano terrenal\nשל אהבה ושמחה, של האדם הארצי"
+			},
+			25: {
+				title: "La Casa de mis Abuelos",
+				description: "השיר מתאר את הבית של סבא וסבתא, מקום שבו זוכרים את המדיסינה של האבות הקדמונים, ומרגישים את ריפוי הלבבות.",
+				lyrics: "Aquí en la casa de mis abuelos\nכאן בבית של סבא וסבתא שלי\n\nVoy recordando, voy recordando\nאני זוכר, אני זוכר\n\nAquí en la kiva de mis abuelos\nכאן בקיווה של סבא וסבתא שלי\n\nVengo llamando, vengo llamando\nאני קורא, אני קורא\n\nLa medicina de mis abuelos\nהמדיסינה של סבא וסבתא שלי\n\nVoy levantando, voy levantando\nאני מרים, אני מרים"
+			},
+			27: {
+				title: "Mensageiro Beija-Flor",
+				description: "השיר מתאר את יונק הדבש כשליח אהבה מהיער, המבקש להביא ריפוי ושמחה.",
+				lyrics: "Eu Venho lá da floresta, o meu canto é de amor\nאני בא מהיער, השיר שלי הוא שיר אהבה\n\nSou um índio mensageiro, mensageiro do amor\nאני אינדיאני שליח, שליח של אהבה\n\nEhehe ehehe ehehehehe....\nאההההה אהההה אההההה...\n\nEu peço à mãe Rainha, toda hora todo dia\nאני מבקש מהאם המלכה, כל שעה כל יום\n\nPara trazer a cura, e a nos dar muita alegria\nכדי להביא את הריפוי, ולתת לנו הרבה שמחה"
+			},
+			28: {
+				title: "Duas Ventarolas",
+				description: "השיר מוקדש לכבודן של אלות הים והרוח, אשר נושבות בים ומביאות רוגע.",
+				lyrics: "Eram duas ventarolas\nהיו שתי שבשבות\n\nDuas ventarolas que venta no mar\nשתי שבשבות שנושבות בים\n\nUma era Yansã, o eparrei\nאחת הייתה יאנסה, אוי פאריי\n\nE a outra era Yemanjá, odociaba\nוהשנייה הייתה ימאנז'ה, אודוסיאבה"
+			},
+			29: {
+				title: "A Energia da Floresta",
+				description: "השיר מדבר על האנרגיה המגיעה מהיער, המביאה טרנספורמציה, שלווה וכוח לריפוי ולהתחברות עם הטבע.",
+				lyrics: "A a a eee, A a a eee, A a a eee\nא אה אה אה, א אה אה אה, א אה אה אה\n\nVenho da mata\nאני בא מהיער\n\nTrago a luz da miração\nאני מביא את אור הראייה\n\nNestes encantos Nixi Pae e Kawa\nבקסמים האלה של נישי פה וקאווה\n\nFazendo a transformação\nעושים את הטרנספורמציה"
+			},
+			30: {
+				title: "Pinta Viva",
+				description: "השיר מוקדש לחוויית הטקס האינדיאני, שבו זקני השבט מתכנסים לשתות את המדיסינה ולהתחבר עם רוח האלוהות והטבע.",
+				lyrics: "En un viaje con remedio, me llevaron a lo lejos\nבמסע עם התרופה, הם לקחו אותי רחוק\n\nAl lugar donde habitan los abuelos yageseros\nלמקום שבו גרים הסבים היאגסרים\n\nEra un bello paraíso, lleno de puro misterio\nזה היה גן עדן יפהפה, מלא מסתורין טהור\n\nY la magia se vivía en el agua y en el viento\nוהקסם היה חי במים וברוח"
+			},
+			31: {
+				title: "Tapuya",
+				description: "שיר המוקדש לשבט אינדיאני בברזיל, המתאר את הקשר שלהם עם הטבע והמסורות שלהם.",
+				lyrics: "Tapuya tapuya jacaranda\nטאפויה טאפויה ג'קרנדה\n\nTapuya tapuya peixe do Mar\nטאפויה טאפויה דג הים\n\nMinha mae e uma senhora\nאמא שלי היא גברת\n\nFecha a porta e vai deitar\nסוגר את הדלת והולך לישון"
+			},
+			32: {
+				title: "Fenix",
+				description: "השיר מוקדש לסן פדרו, המתואר כעוף חול הממלא באור ומוביל את הדרך שלא ניתן ללכת בה לאיבוד.",
+				lyrics: "Campanas angelicales que ahora vienen subiendo\nפעמונים מלאכיים שעולים כעת\n\nMensajes dimensionales\nמסרים מימדיים\n\nQue ahora vengo comprendiendo\nשאני מבין כעת\n\nEspacios dimensionales que ahora vengo recorriendo\nמרחבים מימדיים שאני כעת חוצה\n\nPinta dragon, pinta wacamayo\nצייר דרקון, צייר וקאמיו"
+			},
+			33: {
+				title: "Sagrado Femenino",
+				description: "השיר מדבר על הנשים כמדיסינה, ששרות ורוקדות ומתעוררות לחיים תוך כדי ריפוי וחיבור לאדמה.",
+				lyrics: "Somos medicina, mujeres medicina\nאנחנו מדיסינה, נשים מדיסינה\n\nCantando y danzando, despertando en esta vida\nשרות ורוקדות, מתעוררות לחיים\n\nCrecemos siendo niñas, sabias abuelitas\nגדלנו להיות ילדות, סבתות חכמות\n\nMujeres creadoras, poderosas sanadoras\nנשים יוצרות, מרפאות חזקות"
+			},
+			34: {
+				title: "Madre Tierra Temazcal",
+				description: "שיר המוקדש לטקס הסווטלודג', מביע תודה לאמא אדמה ולכוחות הטבע בתוכו.",
+				lyrics: "En este vientre madre tierra Temazcal\nברחם הזה אמא אדמה טמאזקל\n\nLas gracias hoy, le vengo a dar\nתודה היום, אני בא להעניק\n\nFuego sagrado abuelo Huehueteotl\nאש קדושה סבא הואואטאוטל\n\nGracias le doy por tu calor\nתודה על החום שלך"
+			},
+			35: {
+				title: "Canto Curador",
+				description: "שיר המדבר על ריפוי בעזרת המדיסינות השונות, ותחושת הריפוי שמגיעה עם האמונה והאהבה.",
+				lyrics: "Cura, cura, cura, cura, Cura, cura com amor\nרפא, רפא, רפא, רפא, רפא, רפא באהבה\n\nCura, cura, cura, cura, Cura canto curador\nרפא, רפא, רפא, רפא, רפא שיר מרפא\n\nCura San Pedro, cura Jurema\nרפא סן פדרו, רפא ג'ורמה\n\nCura cura com Tabaco\nרפא רפא בטבק"
+			},
+			
+			36: {
+				title: "שיר בעברית (ללא שם)",
+				description: "שיר תפילה המבקש כוח לשיר ולשמוח, תוך כדי בקשת הכוח מהאדון.",
+				lyrics: "הוי אדון עולם\nבוא וקבל את תפילתי\n\nתן לי את הכוח\nלשיר ולשמוח"
+			},
+			37: {
+				title: "אם בתוך האש",
+				description: "השיר מדבר על הריקוד בתוך האש ואיך הולכים לאיבוד בתוך האור, כמשל לעוצמה הרוחנית והפנימית.",
+				lyrics: "אם בתוך האש\nיש ריקוד של אש\n\nואני הולך לאיבוד\nבתוך האור הזה"
+			},
+			38: {
+				title: "Huni Kuin Kaxinawa",
+				description: "השיר הוא קריאה לאמא טבע לבוא וללמד אותנו ולרפא אותנו בכוחותיה הגדולים.",
+				lyrics: "Vem, vem mae natureza\nבואי, בואי אמא טבע\n\nVem nos ensinar\nבואי ללמד אותנו\n\nVem, vem tete-pawa\nבואי, בואי טטה-פאווה\n\nVem a nos curar\nבואי לרפא אותנו"
+			},
+			39: {
+				title: "Forca da Floresta",
+				description: "השיר קורא לכוח הריפוי של היער ומזמין את הכוח הזה ללמד ולרפא אותנו.",
+				lyrics: "Eu chamo forca la da floresta\nאני קורא לכוח מהיער\n\nE a forca vem, vem me ensinar\nוהכוח בא, בא ללמד אותי\n\nYanahe he yana hohoho\nיאנהה ה יאנה הוהוהו\n\nEu chamo a cura la da floresta\nאני קורא לריפוי מהיער\n\nE a cura vem para nos curar\nוהריפוי בא לרפא אותנו"
+			},
+			40: {
+				title: "Na Rene Wakame e",
+				description: "שיר זה מתאר את החיבור העמוק עם הטבע ועם רוחות היער, המזמינות אותנו להתקרב לריפוי ולכוח הפנימי.",
+				lyrics: "Na rene wakame ê, hunu waka namake ê\nנה רנה וואקמה א, הונו וואקה נאמק א\n\nAka txunu kuriwe ê, kuruwa ekere-mã ê\nאקה טקסונו קוריווה א, קורוואה אקרמה א"
+			},
+			41: {
+				title: "Cura para Nos Curar",
+				description: "השיר עוסק בכוח הריפוי של היער והכוחות הרוחניים, וקורא לאחיות ואחים להתאחד לריפוי קולקטיבי.",
+				lyrics: "Meus irmãos vou chamar aqui nesse terreiro\nאחיי, אקרא לכם כאן בשטח הזה\n\nE a força da cura, é a força da cura\nוהכוח של הריפוי, הוא כוח הריפוי\n\nE a força da cura, para nos curar\nוהכוח של הריפוי, כדי לרפא אותנו"
+			},
+			42: {
+				title: "Esfera Azul",
+				description: "שיר זה מדבר על התעוררות הלב וזכירת מהותנו האמיתית, והבנה שהנשמה שלנו משתקפת בזולת.",
+				lyrics: "En el firmamento nació una ventana de luz azul\nברקיע נולדה חלון של אור כחול\n\nEn el universo creció una esfera de cielo azul\nביקום גדל כדור של שמיים כחולים\n\nQue nos regala esa luz, esencia de lo que soy\nשנותן לנו את האור הזה, מהות של מה שאני"
+			},
+			43: {
+				title: "Xanu Yara",
+				description: "השיר מדבר על הגעתו מהיער ובקשת רשות להכיר את עוצמת המדיסין והרוחות הקדושות.",
+				lyrics: "Venho das matas pedindo licenca\nאני בא מהיערות ומבקש רשות\n\nReconhece a fora que a Jurema tem\nלהכיר את הכוח שיש ליורמה\n\nXanu Iara\nשנו יארה\n\nYara, flor das aguas\nיארה, פרח המים"
+			},
+			44: {
+				title: "Canta Pajarito",
+				description: "השיר מדבר על מוזיקה כקול של תרבותנו, שמביאה תקווה ושלווה בעולם של חוסר צדק.",
+				lyrics: "Canta pajarito, canta pajarito\nשירי ציפור, שירי ציפור\n\n(Aunque no estés) a mi lado\n(גם אם אינך) לצידי\n\nSomos seres de esperanza en los tiempos de violencia\nאנחנו ישויות של תקווה בזמנים של אלימות\n\nLa música es nuestra voz\nהמוזיקה היא הקול שלנו"
+			},
+			45: {
+				title: "Agua No Mas Palabras",
+				description: "השיר מדבר על לידת האנושות החדשה, המבוססת על שירה, ריקוד ושלווה, כאשר המים והטבע מובילים את הדרך.",
+				lyrics: "Agua no mas palabras beber esta tu luz\nמים, לא יותר מילים לשתות את האור שלך\n\nBajar de la montaña rezar con cada flor\nלרדת מההר להתפלל עם כל פרח\n\nCielo a tus ojos brillar con el sol\nהשמיים בעיניך זוהרים עם השמש"
+			},
+			46: {
+				title: "Huehueteotl",
+				description: "שיר המוקדש לאל האש, בורא החיים, שבו הוא מוזמן להאיר ולרפא את הלבבות באורו המקודש.",
+				lyrics: "Xiuhtecuhtli huehueteotl\nשיוהטקוטלי הואואטאוטל\n\nEl poder de mis ancestros magia multicolor\nהכוח של אבותיי, קסם רב-צבעוני\n\nNaciendo desde el fuego viene y me da su amor\nנולד מהאש בא ונותן לי את אהבתו"
+			},
+			47: {
+				title: "Aguas Claras",
+				description: "שיר המוקדש לאמא טבע, המתאר את המים הצלולים שלה כטוהר ויופי שמביאים ריפוי וניקוי לנפש.",
+				lyrics: "Aguas claras, aguas doces\nמים צלולים, מים מתוקים\n\nAguas doces, Oxum minha mãe\nמים מתוקים, אושום אמא שלי\n\nSois vos quem me cuida, vos quem me sana\nאת זו שמטפלת בי, את זו שמרפאה אותי"
+			},
+			48: {
+				title: "Pachamama y Pachakamaq",
+				description: "השיר מהלל את האור של פצ'מאמא, על כל החיים והאהבה שהיא מעניקה, ומדבר על החיבור שלנו לטבע וליקום.",
+				lyrics: "Pachamama y Pachakamaq\nפצ'מאמא ופצ'קאמאק\n\nLuz de vida, luz de amor\nאור החיים, אור האהבה\n\nTe agradezco por mi vida\nאני מודה לך על חיי\n\nPor mi aliento y por mi voz\nעל נשימתי ועל קולי"
+			},
+			49: {
+				title: "Om Nama Shivaya",
+				description: "שיר המנטרה ההודית המבוסס על שיווה, אל החוכמה וההרס, המהווה הודיה על החיים והאור.",
+				lyrics: "Om nama shivaya, om nama shivaya\nאום נמה שיוואיה, אום נמה שיוואיה\n\nNama shivaya nama om\nנמה שיוואיה, נמה אום\n\nGracias por la vida, gracias por la vi-da\nתודה על החיים, תודה על החיים"
+			},
+			50: {
+				title: "Txana Ikakuru",
+				description: "שיר מסורתי של אנשי ההוניקוין, התושבים הילידים של ברזיל ופרו, המדבר על החיבור שלהם לטבע ולרוחות.",
+				lyrics: "Bare, tiri, Ikatu\nבארה, טירי, איקאטו\n\nNana-ne nana-ne, nana-ne nana-ne\nננה-נה ננה-נה, ננה-נה ננה-נה\n\nHawa, rawu, tibuya\nחאווה, ראוו, טיבויה"
+			},
+			51: {
+				title: "Ojos",
+				description: "השיר מדבר על ההתעוררות הרוחנית המגיעה כאשר מביטים פנימה, דרך הסערות הפנימיות, ולומדים לראות את האמת שבפנים.",
+				lyrics: "Ojos que miran vienen de adentro ayudan a despertar\nעיניים שמביטות מבפנים עוזרות להתעורר\n\nEntre la sombra veo un destello ayuda a dejar atrás\nבין הצללים אני רואה הבזק שמסייע לשחרר מאחור\n\nCruza la tormenta\nעבר דרך הסערה\n\nComo un trueno alumbra en la oscuridad\nכמו רעם שמאיר בחושך\n\nCruza la tormenta es solo un juego para asi recordar\nעבר דרך הסערה, זה רק משחק כדי לזכור"
+			},
+			52: {
+				title: "Caminante Sabio",
+				description: "השיר מתאר את הדמות של המטייל החכם המוביל את הדרך, המביא איתו חוכמה ואור לכל מקום שאליו הוא הולך.",
+				lyrics: "Caminante sabio, va llevando su luz\nההולך החכם, נושא את אורו\n\nPor todos los caminos, a donde va él\nבכל הדרכים, לאן שהוא הולך\n\nSiempre llevando su corazón\nתמיד נושא את ליבו\n\nSiempre mostrando el camino del amor\nתמיד מראה את הדרך של האהבה"
+			},
+			53: {
+				title: "Abuelos Milenarios",
+				description: "השיר מתאר את חכמתם של הסבים הקדמונים, אשר מאירים את הדרך ומזכירים לנו את חובתנו לרפא את האנושות ולחיות בהרמוניה עם האדמה.",
+				lyrics: "Abuelo milenario tu que habitas en el cielo\nסב מילנרי, אתה ששוכן בשמיים\n\nAbuela milenaria tu que habitas en la tierra\nסבתא מילנרית, את ששוכנת באדמה\n\nEn la luna, en las estrellas, en los rios y en las selvas\nבירח, בכוכבים, בנהרות וביערות\n\nEn el aguila, el condor, el jaguar y la anaconda\nבנשר, בקונדור, ביגואר ובאנקונדה"
+			},
+			54: {
+				title: "עבדי זמן",
+				description: "השיר מדבר על היותם של בני האדם עבדים לזמן, וכיצד רק עבדי ה' הם חופשיים באמת.",
+				lyrics: "עבדי זמן עבדי עבדים הם\nעבד ה' הוא לבדו חופשי\n\nעל כן בבקש כל אנוש חלקו\nחלקי ה' אמרה נפשי"
+			},
+			55: {
+				title: "שלח לי מלאך",
+				description: "השיר מבקש מהאל לשלוח מלאך שישמור ויאיר את הדרך בחיפוש אחר הלב הפתוח.",
+				lyrics: "שלח לי מלאך לשמור עלי\nשלח לי מלאך, שלח לי אור\n\nאני מחפש את הדרך\nלמצוא את הלב הפתוח"
+			},
+			56: {
+				title: "נשמת כל חי",
+				description: "השיר הוא תפילה שמברכת ומשבחת את שמו של האל, תוך הכרה בכוחו כמושיע ומגן.",
+				lyrics: "נשמת כל חי תברך את שמך\nרוח כל בשר תפאר ותנשא\n\nעד העולם אתה אלוה\nמושיע ומגן לכל הדורות"
+			},
+			57: {
+				title: "אלון בסלע",
+				description: "השיר מתאר את הכוח והחוסן של האדם, בדומה לאלון העומד איתן על הסלע, מול סערות החיים.",
+				lyrics: "אלון בסלע, רוח במרום\nעמוד בלב הסערה\n\nקום והיה אדם\nהיה כאלון בסלע"
+			},
+			58: {
+				title: "שירו של שפשף",
+				description: "השיר מדבר על מהות החיים דרך דימוי של קרון רכבת, שמתחיל ונגמר, וממשיך הלאה במסע.",
+				lyrics: "החיים הם כמו קרון רכבת\nיש להם סוף וגם התחלה\n\nרכבת אחת נכנסת לתחנה\nורכבת אחרת יוצאת למסע"
+			},
+			59: {
+				title: "פרפרי הקצב",
+				description: "השיר מתאר את הקצב של החיים והפרפרים שמסמלים את השמחה והאור שמביאים לחיים.",
+				lyrics: "פרפרי הקצב רוקדים סביבי\nמביאים שמחה ואור לחיי\n\nהם עפים לכל עבר\nומזכירים לי את כוחי"
+			},
+			60: {
+				title: "עוד תראי את הדרך",
+				description: "השיר מדבר על התקווה והאור שמחכים מעבר לפינה, בדרכך למצוא את השביל הנכון.",
+				lyrics: "עוד תראי את הדרך\nעוד תראי את האור\n\nעוד תראי את התקווה\nהיא מחכה לך מעבר לפינה"
+			},
+			61: {
+				title: "כל כולי אור",
+				description: "השיר מתאר את תחושת האור והשמחה שממלאים את הדרך, ומובילים לאהבה וחיים.",
+				lyrics: "כל כולי אור\nכל כולי שמחה\n\nאני הולך בדרך\nשל אור ואהבה"
+			},
+			62: {
+				title: "אם",
+				description: "השיר מדבר על החיפוש אחר האמת, השמחה והדרך, ומזכיר שהכול נמצא בתוכך.",
+				lyrics: "אם תרצי לדעת את האמת\nאם תרצי לחוש את השמחה\n\nאם תרצי למצוא את הדרך\nהיא תמיד בתוכך"
+			},
+			63: {
+				title: "Aguita Camino Rojo",
+				description: "השיר מדבר על המים החיים והטהורים, הזורמים בדרכים האדומות של הלב, ומבשרים ריפוי וניקוי.",
+				lyrics: "Agüitay, agüita\nאגוויטה, אגוויטה\n\nQue canta, calma, sana, cura el caminito naynaray\nששרה, מרגיעה, מרפאת, מרפאה את השביל\n\nFluyes en el río, agüita\nזורמים בנהר, אגוויטה\n\nCantas en el ancho mar\nשרים בים הרחב\n\nAgua que corres por mis venas\nמים הזורמים בעורקיי"
+			},
+			64: {
+				title: "La Tierra del Misterio",
+				description: "השיר עוסק בחיבור לאדמת המסתורין והאמת, ומזכיר את הדרך של אהבה וריפוי שהפאצ'מאמא והמדיסינות מעניקות לנו.",
+				lyrics: "Vengo de una tierra luz galactica ancestral\nאני בא מאדמת אור גלקטית קדומה\n\nLugar del misterio la armonía y la verdad\nמקום של מסתורין, הרמוניה ואמת\n\nY vamos como niños con la esencia y la verdad\nוהולכים כמו ילדים עם המהות והאמת\n\nQue fue desvaneciendo con el velo de la edad\nשהתפוגגה עם כיסוי הגיל"
+			},
+			65: {
+				title: "Abuelito Fuego",
+				description: "השיר מודה לארבעת האלמנטים הקדושים, ומזכיר את הריפוי והאהבה שהם מעניקים לנו.",
+				lyrics: "Abuelito Fuego las gracias te damos\nסבא אש, תודה לך אנחנו נותנים\n\nPor abrir el corazón a la sanación, abrirlo al amor\nעל פתיחת הלב לריפוי, על פתיחתו לאהבה\n\nMadrecita Tierra las gracias te damos\nאמא אדמה קטנה, תודה לך אנחנו נותנים\n\nHermanito Viento las gracias te damos\nאח קטן רוח, תודה לך אנחנו נותנים"
+			},
+			66: {
+				title: "Família Ywanawa",
+				description: "שיר זה מוקדש לאנשי ההוניקוין והקשר שלהם למדיסינות ולרוחות היער.",
+				lyrics: "Ay Nanani nana-re\nאיי ננאני ננה-רה\n\nHuni pae kuneya\nהוני פה קונייה\n\nKana rua tapaya\nקנה רואה טאפאיה"
+			},
+			67: {
+				title: "Espiritu del Agua",
+				description: "השיר מתאר את הרוח היפה של המים, האש והשמיים, שמביאים ריפוי וניקוי לנשמות.",
+				lyrics: "Hermoso espiritu del agua, Llega ya\nרוח המים היפה, בואי כבר\n\nCurando purificando, Llega ya\nמרפאה ומטהרת, בואי כבר\n\nEn el corazon de este fuego, Soplan ya\nבלב האש הזו, נושבים כבר\n\nHermoso espiritu del cielo, Llega ya\nרוח השמיים היפה, בואי כבר"
+			},
+			68: {
+				title: "Bella Flor",
+				description: "שיר המהלל את היופי של פרח האהבה, אשר מזמין אותנו לשיר עם הלב ולהאיר את הפנים.",
+				lyrics: "Vuela, vuela corazón\nעוף, עוף לב\n\nEn las alas deste canto\nבכנפיים של השיר הזה\n\nUna bella bella flor\nפרח יפה, יפה\n\nDulcemente está llamando\nמתוקה קוראת\n\nCanta canta corazón\nשיר, שיר לב"
+			},
+			69: {
+				title: "Agüita Camino Rojo",
+				description: "השיר מתאר את המים החיים, הזורמים בדרך האדומה של הלב, ומביאים ריפוי ואהבה.",
+				lyrics: "Agüitay, agüita\nאגוויטה, אגוויטה\n\nQue canta, calma, sana, cura el caminito naynaray\nששרה, מרגיעה, מרפאת, מרפאה את השביל\n\nFluyes en el río, agüita\nזורמים בנהר, אגוויטה\n\nCantas en el ancho mar\nשרים בים הרחב\n\nAgua que corres por mis venas\nמים הזורמים בעורקיי"
+			},
+			70: {
+				title: "Sagrada Familia",
+				description: "שיר המדבר על האיחוד הקדוש של המשפחה, הנשר, הקונדור והכוחות הקדושים, המביאים ריפוי ושמחה.",
+				lyrics: "Águila del norte\nנשר הצפון\n\nVigilante vuelo\nמעוף שומר\n\nTrae la medicina\nמביא את המדיסינה\n\nSagrada familia\nמשפחה קדושה\n\nTambor milagrero\nתוף ניסי"
+			},
+			71: {
+				title: "אחותי משבט אינדיאני",
+				description: "השיר מתאר את האחווה והשיתוף בין השבטים, ואת הריקוד והשירה סביב המדורה כחלק מהחיבור לרוח הגדולה.",
+				lyrics: "אחותי משבט אינדיאני\nבואי נרקוד סביב המדורה\n\nנשיר שירי קדומים\nונתחבר עם הרוח הגדולה"
+			},
+			72: {
+				title: "El Alegre Pescador",
+				description: "השיר מתאר את הדייג השמח שחוזר מהים, מדבר עם הירח ומביא את שלל האהבה לחוף.",
+				lyrics: "Va subiendo la corriente\nעולה עם הזרם\n\nCon chinchorro y atarraya\nעם רשת וחכה\n\nLa canoa de bareque\nהקנו של ברק\n\nPara llegar a la playa\nכדי להגיע לחוף\n\nEl pescador habla con la luna\nהדייג מדבר עם הירח"
+			}			
+        };
+
+        document.getElementById('songSelect').addEventListener('change', function() {
+            const selectedSong = songs[this.value];
+            if (selectedSong) {
+                document.getElementById('songTitle').textContent = selectedSong.title;
+                document.getElementById('songDescription').textContent = selectedSong.description;
+                document.getElementById('songLyrics').textContent = selectedSong.lyrics;
+            } else {
+                document.getElementById('songTitle').textContent = '';
+                document.getElementById('songDescription').textContent = '';
+                document.getElementById('songLyrics').textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
